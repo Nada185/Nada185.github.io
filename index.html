@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Ramallah Waste Containers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
   <style>
     body {
@@ -41,23 +42,23 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s;
     }
-  
+
     .side-button.active {
       background-color: #d4edda;
     }
- 
+
     .reset-button {
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
     .fullscreen-button {
       position: absolute;
@@ -126,8 +127,58 @@
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
+
+    /* استعلامات الوسائط للأجهزة المحمولة */
+    @media (max-width: 768px) {
+      .side-buttons {
+        top: 20px;
+        right: 5px;
+        gap: 5px;
+      }
+
+      .side-button, .reset-button, .fullscreen-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
+
+      .search-bar {
+        top: 60px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+        flex-direction: row;
+        padding: 5px;
+      }
+
+      .search-bar input {
+        font-size: 12px;
+        width: 60%;
+      }
+
+      .toggle-border-button {
+        margin-top: 0;
+        padding: 4px;
+        font-size: 12px;
+      }
+
+      #map {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+
+    /* تثبيت الأزرار */
+    .side-buttons, .fullscreen-button {
+      position: fixed;
+    }
+
+    .search-bar, .toggle-border-button {
+      position: fixed;
+    }
   </style>
 </head>
+
 
 <body>
   <div id="map"></div>
